@@ -93,6 +93,29 @@
       ]
     },
     {
+      "id": "mlh-ghw-agents-2026",
+      "name": "MLH Global Hack Week: Agents",
+      "platform": "Major League Hacking",
+      "url": "https://ghw.mlh.com/",
+      "type": "hackathon",
+      "format": "online",
+      "location": "Online (global)",
+      "start": "2026-08-07",
+      "end": "2026-08-13",
+      "reg": null,
+      "prize": null,
+      "prize_kind": "non-cash",
+      "prize_note": "Free event; earn points, digital prizes, and swag",
+      "summary": "MLH's free week-long virtual festival of AI-agent workshops, livestreams, and challenges; earn points and swag.",
+      "conf": "confirmed",
+      "eligibility": "Open to everyone worldwide; free",
+      "tags": [
+        "agents",
+        "mlh",
+        "beginner"
+      ]
+    },
+    {
       "id": "all-things-agentic-hackathon",
       "name": "All Things Agentic Hackathon",
       "platform": "Devpost",
@@ -136,6 +159,29 @@
         "agent",
         "finance",
         "neurips"
+      ]
+    },
+    {
+      "id": "ibm-techxchange-dev-day-hackathon-2026",
+      "name": "IBM TechXchange 2026 Pre-conference Dev Day Hackathon",
+      "platform": "IBM Developer (BeMyApp)",
+      "url": "https://developer.ibm.com/events/ibm-techxchange-2026-pre-conference-dev-day-hackathon",
+      "type": "hackathon",
+      "format": "online",
+      "location": "Online (virtual)",
+      "start": "2026-08-28",
+      "end": null,
+      "reg": null,
+      "prize": 5000,
+      "prize_kind": "mixed",
+      "prize_note": "Up to $5K cash plus TechXchange passes, AirPods, and IBM Cloud credits",
+      "summary": "Virtual IBM watsonx hackathon ahead of TechXchange 2026 with cash, conference passes, and cloud credits.",
+      "conf": "approximate",
+      "eligibility": "Virtual, open registration; prize/pass eligibility rules apply",
+      "tags": [
+        "watsonx",
+        "ibm",
+        "agents"
       ]
     },
     {
@@ -272,6 +318,29 @@
       "tags": [
         "ai",
         "infrastructure"
+      ]
+    },
+    {
+      "id": "mlh-ghw-data-2026",
+      "name": "MLH Global Hack Week: Data",
+      "platform": "Major League Hacking",
+      "url": "https://ghw.mlh.com/",
+      "type": "hackathon",
+      "format": "online",
+      "location": "Online (global)",
+      "start": "2026-09-11",
+      "end": "2026-09-17",
+      "reg": null,
+      "prize": null,
+      "prize_kind": "non-cash",
+      "prize_note": "Free event; earn points, digital prizes, and swag",
+      "summary": "MLH's free week-long virtual festival of data and ML workshops, livestreams, and challenges.",
+      "conf": "confirmed",
+      "eligibility": "Open to everyone worldwide; free",
+      "tags": [
+        "data",
+        "ml",
+        "mlh"
       ]
     },
     {
