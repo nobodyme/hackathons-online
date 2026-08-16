@@ -61,15 +61,6 @@ Rules the page enforces automatically:
   show "Dates to be announced".
 - Prize pools are shown as advertised — non-cash pools (credits/hardware) are flagged.
 
-## Automated refresh
+## Automated refresh experiment
+The content is curated by Claude on 3 day schedule, fully AI curated and pushes to this branch which then publishes the github page. Let's see how useful this experiment turns out to be.
 
-An external schedule ("AI Competition Radar — 3-day refresh") researches current competitions every
-3 days and pushes an updated `competitions.json` to `main`, which triggers the Pages deploy above.
-Nothing else in the repo changes between refreshes.
-
-## One-time setup
-
-1. Merge this to `main`.
-2. In **Settings → Pages → Build and deployment → Source**, choose **GitHub Actions**.
-
-The first push to `main` then publishes the site, and every later refresh updates it automatically.
