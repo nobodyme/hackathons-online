@@ -82,12 +82,12 @@
     var soon = st === "upcoming" && startsIn !== null && startsIn >= 0 && startsIn <= 7;
     var dur = durationDays(it);
 
-    var badges = [];
-    badges.push('<span class="badge status-' + st + '">' +
-      (st === "in-progress" ? "In progress" : st.charAt(0).toUpperCase() + st.slice(1)) + "</span>");
-    if (soon) badges.push('<span class="badge soon">Starts in ' + startsIn + "d</span>");
-    if (it.platform) badges.push('<span class="badge meta">' + esc(it.platform) + "</span>");
-    if (it.type) badges.push('<span class="badge meta">' + esc(it.type.replace(/-/g, " ")) + "</span>");
+    var stLabel = st === "in-progress" ? "In progress" : st.charAt(0).toUpperCase() + st.slice(1);
+    var kparts = ['<span class="st' + (st === "in-progress" ? " st-live" : "") + '">' +
+      (st === "in-progress" ? '<span class="dot"></span> ' : "") + stLabel + "</span>"];
+    if (it.platform) kparts.push("<span>" + esc(it.platform) + "</span>");
+    if (it.type) kparts.push("<span>" + esc(it.type.replace(/-/g, " ")) + "</span>");
+    var kicker = kparts.join('<span class="sep"></span>');
 
     // When
     var whenV;
@@ -111,7 +111,7 @@
     var prizeV = null;
     var prizeNum = fmtPrize(it);
     if (prizeNum) {
-      prizeV = prizeNum;
+      prizeV = '<span class="prize-num">' + prizeNum + "</span>";
       if (it.prize_kind && it.prize_kind !== "cash") prizeV += " (" + esc(it.prize_kind) + ")";
       if (it.prize_note) prizeV += " · " + esc(it.prize_note);
     } else if (it.prize_note) {
@@ -122,15 +122,16 @@
     // Who
     var whoV = [it.eligibility, it.location].filter(Boolean).map(esc).join(" · ") || null;
 
+    var soonTag = soon ? '<span class="tag tag-soon">Starts in ' + startsIn + "d</span>" : "";
+    var conf = it.conf && it.conf !== "confirmed" ? '<span class="tag tag-accent">' + esc(it.conf) + " dates</span>" : "";
     var tags = (it.tags || []).map(function (tg) { return '<span class="tag">' + esc(tg) + "</span>"; }).join("");
-    var conf = it.conf && it.conf !== "confirmed" ? '<span class="tag">' + esc(it.conf) + " dates</span>" : "";
 
     return '<article class="card' + (soon ? " is-soon" : "") + '" data-status="' + st + '">' +
-      '<div class="card-badges">' + badges.join("") + "</div>" +
-      '<h2><a href="' + esc(it.url) + '" target="_blank" rel="noopener">' + esc(it.name) + "</a></h2>" +
+      '<div class="card-kicker">' + kicker + "</div>" +
+      '<h2 class="card-title"><a href="' + esc(it.url) + '" target="_blank" rel="noopener">' + esc(it.name) + "</a></h2>" +
       (it.summary ? '<p class="summary">' + esc(it.summary) + "</p>" : "") +
-      (tags || conf ? '<div class="tags">' + tags + conf + "</div>" : "") +
-      '<div class="meta-block">' +
+      (soonTag || conf || tags ? '<div class="tags">' + soonTag + conf + tags + "</div>" : "") +
+      '<div class="meta">' +
         metaRow("When", whenV) +
         metaRow("Runs for", runsV) +
         metaRow("Deadline", dlV) +
@@ -222,10 +223,14 @@
     document.getElementById("grid").innerHTML = shown.map(function (it) { return card(it, t); }).join("");
     document.getElementById("empty").hidden = shown.length !== 0;
 
-    document.getElementById("count").textContent =
-      shown.length + " of " + items.length + " shown · " +
-      counts.upcoming + " upcoming · " + counts["in-progress"] + " in progress · " +
-      counts.completed + " recently completed";
+    // stat row
+    document.getElementById("s-upcoming").textContent = counts.upcoming;
+    document.getElementById("s-live").textContent = counts["in-progress"];
+    document.getElementById("s-done").textContent = counts.completed;
+    document.getElementById("s-total").textContent = items.length;
+
+    document.getElementById("count").innerHTML =
+      "<b>" + shown.length + "</b> of " + items.length + " shown";
 
     // hero: nearest not-yet-started competition
     var upcoming = items.filter(function (it) { return statusOf(it, t) === "upcoming" && parseDate(it.start) !== null; })
@@ -233,11 +238,11 @@
     var title = document.getElementById("hero-title"), sub = document.getElementById("hero-sub");
     if (upcoming.length) {
       var n = upcoming[0], into = daysBetween(parseDate(n.start), t);
-      title.innerHTML = 'Next up: <a href="' + esc(n.url) + '" target="_blank" rel="noopener">' + esc(n.name) + "</a>";
-      sub.textContent = "Starts " + relDays(into) + " (" + fmtDate(n.start) + ") · " +
+      title.innerHTML = 'Next up — <a href="' + esc(n.url) + '" target="_blank" rel="noopener">' + esc(n.name) + "</a>";
+      sub.textContent = "Starts " + relDays(into) + " (" + fmtDate(n.start) + "). " +
         counts.upcoming + " upcoming and " + counts["in-progress"] + " running right now.";
     } else {
-      title.textContent = "AI Competition Radar";
+      title.textContent = "The radar is live.";
       sub.textContent = counts["in-progress"] + " running now · " + items.length + " on the radar.";
     }
   }
@@ -246,7 +251,7 @@
   function wire() {
     document.getElementById("controls").hidden = false;
 
-    var chips = document.querySelectorAll("#status-chips .chip");
+    var chips = document.querySelectorAll("#status-chips .seg-opt");
     chips.forEach(function (c) {
       c.addEventListener("click", function () {
         chips.forEach(function (x) { x.classList.remove("is-active"); });
@@ -269,7 +274,7 @@
       document.getElementById("f-cash").checked = false;
       document.getElementById("f-search").value = "";
       chips.forEach(function (x) { x.classList.remove("is-active"); });
-      document.querySelector('#status-chips .chip[data-status="all"]').classList.add("is-active");
+      document.querySelector('#status-chips .seg-opt[data-status="all"]').classList.add("is-active");
       state.status = "all";
       render();
     });
