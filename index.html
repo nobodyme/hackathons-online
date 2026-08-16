@@ -5,94 +5,119 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AI Competition Radar</title>
   <meta name="description" content="A live radar of online, globally-open AI competitions, agent challenges and hackathons." />
+  <meta name="theme-color" content="#121110" />
+  <link rel="preload" href="assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="competitions.json" as="fetch" crossorigin="anonymous" />
   <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%A1%3C/text%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23ec3013'/%3E%3Crect x='14' y='58' width='16' height='28' fill='%23fff'/%3E%3Crect x='42' y='40' width='16' height='46' fill='%23fff'/%3E%3Crect x='70' y='20' width='16' height='66' fill='%23fff'/%3E%3C/svg%3E" />
 </head>
 <body>
-  <header class="hero" id="hero">
-    <div class="hero-inner">
-      <p class="eyebrow">📡 AI Competition Radar</p>
-      <h1 id="hero-title">Loading the radar…</h1>
+  <header class="hero">
+    <div class="wrap">
+      <p class="kicker">AI Competition Radar</p>
+      <h1 id="hero-title">Loading the radar</h1>
       <p class="hero-sub" id="hero-sub"></p>
-      <p class="refreshed" id="refreshed"></p>
     </div>
+    <div class="hr"></div>
+    <div class="wrap">
+      <div class="statrow" id="statrow">
+        <div class="stat"><span class="stat-num" id="s-upcoming">—</span><span class="stat-label">Upcoming</span></div>
+        <div class="stat"><span class="stat-num" id="s-live">—</span><span class="stat-label">In&nbsp;progress</span></div>
+        <div class="stat"><span class="stat-num" id="s-done">—</span><span class="stat-label">Recently&nbsp;completed</span></div>
+        <div class="stat"><span class="stat-num" id="s-total">—</span><span class="stat-label">On&nbsp;the&nbsp;radar</span></div>
+      </div>
+    </div>
+    <div class="hr"></div>
   </header>
 
   <main class="wrap">
     <section class="controls" id="controls" aria-label="Filters" hidden>
-      <div class="chips" id="status-chips" role="group" aria-label="Status filter">
-        <button class="chip is-active" data-status="all">All</button>
-        <button class="chip" data-status="upcoming">Upcoming</button>
-        <button class="chip" data-status="in-progress">In progress</button>
-        <button class="chip" data-status="completed">Completed</button>
+      <div class="controls-head">
+        <p class="section-label">Filter</p>
+        <button class="btn btn-secondary" id="reset" type="button">Reset<span class="btn-x">×</span></button>
       </div>
 
-      <div class="selects">
-        <label>Starts within
-          <select id="f-starts">
-            <option value="any">any time</option>
+      <div class="seg" id="status-chips" role="group" aria-label="Status filter">
+        <button class="seg-opt is-active" data-status="all" type="button">All</button>
+        <button class="seg-opt" data-status="upcoming" type="button">Upcoming</button>
+        <button class="seg-opt" data-status="in-progress" type="button">In progress</button>
+        <button class="seg-opt" data-status="completed" type="button">Completed</button>
+      </div>
+
+      <div class="fields">
+        <div class="field">
+          <label for="f-starts">Starts within</label>
+          <select class="input" id="f-starts">
+            <option value="any">Any time</option>
             <option value="7">7 days</option>
             <option value="14">14 days</option>
             <option value="30">30 days</option>
             <option value="90">90 days</option>
           </select>
-        </label>
-        <label>Duration
-          <select id="f-duration">
-            <option value="any">any</option>
+        </div>
+        <div class="field">
+          <label for="f-duration">Duration</label>
+          <select class="input" id="f-duration">
+            <option value="any">Any</option>
             <option value="short">≤ 2 days</option>
             <option value="week">3–7 days</option>
             <option value="month">1–4 weeks</option>
-            <option value="long">over a month</option>
+            <option value="long">Over a month</option>
           </select>
-        </label>
-        <label>Prize
-          <select id="f-prize">
-            <option value="any">any</option>
-            <option value="has">has a pool</option>
+        </div>
+        <div class="field">
+          <label for="f-prize">Prize</label>
+          <select class="input" id="f-prize">
+            <option value="any">Any</option>
+            <option value="has">Has a pool</option>
             <option value="1000">$1K+</option>
             <option value="10000">$10K+</option>
             <option value="50000">$50K+</option>
             <option value="100000">$100K+</option>
           </select>
-        </label>
-        <label>Format
-          <select id="f-format">
-            <option value="any">any</option>
-            <option value="online">online</option>
-            <option value="hybrid">hybrid</option>
+        </div>
+        <div class="field">
+          <label for="f-format">Format</label>
+          <select class="input" id="f-format">
+            <option value="any">Any</option>
+            <option value="online">Online</option>
+            <option value="hybrid">Hybrid</option>
           </select>
-        </label>
-        <label>Sort
-          <select id="f-sort">
+        </div>
+        <div class="field">
+          <label for="f-sort">Sort</label>
+          <select class="input" id="f-sort">
             <option value="nearest">Start — nearest first</option>
             <option value="chrono">Start — chronological</option>
             <option value="deadline">Deadline — soonest</option>
             <option value="prize">Prize — highest</option>
           </select>
-        </label>
+        </div>
       </div>
 
       <div class="controls-row">
-        <input type="search" id="f-search" placeholder="Search name, platform, tag…" aria-label="Search" />
-        <label class="check"><input type="checkbox" id="f-cash" /> Real cash only</label>
-        <button class="reset" id="reset">Reset</button>
+        <input type="search" class="input" id="f-search" placeholder="Search name, platform, tag…" aria-label="Search" />
+        <label class="check"><input type="checkbox" id="f-cash" /><span class="box"></span> Real cash only</label>
       </div>
     </section>
 
-    <p class="count" id="count"></p>
+    <div class="hr"></div>
+    <div class="results-head">
+      <p class="count" id="count"></p>
+      <p class="refreshed" id="refreshed"></p>
+    </div>
 
     <section class="grid" id="grid" aria-live="polite"></section>
-
     <p class="empty" id="empty" hidden>No competitions match these filters.</p>
   </main>
 
-  <footer class="site-foot">
-    <p>Entries are deduplicated by ID and normalized URL, and dropped once they ended more than 7 days ago.
-       Prize pools are as advertised — always confirm on the official page before committing time.</p>
-    <p class="src">Data: <code>competitions.json</code> · refreshed automatically every 3 days ·
-       <a href="https://github.com/nobodyme/hackathons-online">source on GitHub</a></p>
+  <footer class="poster">
+    <div class="wrap">
+      <p class="poster-statement">Ship something<br />before the clock does.</p>
+      <div class="hr hr-invert"></div>
+      <p class="poster-note">Entries are deduplicated by ID and normalized URL, and dropped once they ended more than seven days ago. Prize pools are printed as advertised — confirm on the official page before committing time.</p>
+      <p class="src">Data: <code>competitions.json</code> · refreshed every 3 days · <a href="https://github.com/nobodyme/hackathons-online">source on GitHub</a></p>
+    </div>
   </footer>
 
   <script src="app.js"></script>

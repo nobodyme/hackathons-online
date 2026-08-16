@@ -15,7 +15,13 @@ Layout and data are deliberately separated:
 | `styles.css` | Design, responsive layout, light + dark themes |
 | `app.js` | Fetches `competitions.json` and renders cards, filters and sort **live in the browser** — it recomputes status and countdowns from the current date, so the page stays accurate between refreshes |
 | `competitions.json` | **The only file that changes on a refresh** — the competition list |
+| `assets/fonts/` | Self-hosted Archivo (variable woff2) — no external font dependency |
 | `.github/workflows/deploy.yml` | Publishes the site to GitHub Pages on every push to `main` |
+
+The visual style is **Modernist (dark)**: flat and architectural, set in Archivo, a single red
+accent (`#ec3013`) on a near-black ground, a visible modular grid, zero corner radius, and
+strong 2px rules. Design tokens live at the top of `styles.css` — restyling (or flipping back
+to a light ground) is a matter of editing those variables.
 
 Because the page renders `competitions.json` client-side, refreshing the data is just a matter of
 overwriting that one file — the layout never has to be regenerated.
