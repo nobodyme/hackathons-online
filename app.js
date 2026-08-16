@@ -83,11 +83,11 @@
     var dur = durationDays(it);
 
     var stLabel = st === "in-progress" ? "In progress" : st.charAt(0).toUpperCase() + st.slice(1);
-    var kparts = ['<span class="st' + (st === "in-progress" ? " st-live" : "") + '">' +
-      (st === "in-progress" ? '<span class="dot"></span> ' : "") + stLabel + "</span>"];
-    if (it.platform) kparts.push("<span>" + esc(it.platform) + "</span>");
-    if (it.type) kparts.push("<span>" + esc(it.type.replace(/-/g, " ")) + "</span>");
-    var kicker = kparts.join('<span class="sep"></span>');
+    var badges = ['<span class="badge b-' + st + '">' + stLabel + "</span>"];
+    if (soon) badges.push('<span class="badge b-soon">Starts in ' + startsIn + "d</span>");
+    if (it.platform) badges.push('<span class="tag">' + esc(it.platform) + "</span>");
+    if (it.type) badges.push('<span class="tag">' + esc(it.type.replace(/-/g, " ")) + "</span>");
+    var badgeRow = badges.join("");
 
     // When
     var whenV;
@@ -122,15 +122,14 @@
     // Who
     var whoV = [it.eligibility, it.location].filter(Boolean).map(esc).join(" · ") || null;
 
-    var soonTag = soon ? '<span class="tag tag-soon">Starts in ' + startsIn + "d</span>" : "";
     var conf = it.conf && it.conf !== "confirmed" ? '<span class="tag tag-accent">' + esc(it.conf) + " dates</span>" : "";
     var tags = (it.tags || []).map(function (tg) { return '<span class="tag">' + esc(tg) + "</span>"; }).join("");
 
     return '<article class="card' + (soon ? " is-soon" : "") + '" data-status="' + st + '">' +
-      '<div class="card-kicker">' + kicker + "</div>" +
+      '<div class="card-badges">' + badgeRow + "</div>" +
       '<h2 class="card-title"><a href="' + esc(it.url) + '" target="_blank" rel="noopener">' + esc(it.name) + "</a></h2>" +
       (it.summary ? '<p class="summary">' + esc(it.summary) + "</p>" : "") +
-      (soonTag || conf || tags ? '<div class="tags">' + soonTag + conf + tags + "</div>" : "") +
+      (conf || tags ? '<div class="tags">' + conf + tags + "</div>" : "") +
       '<div class="meta">' +
         metaRow("When", whenV) +
         metaRow("Runs for", runsV) +

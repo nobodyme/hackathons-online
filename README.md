@@ -18,10 +18,10 @@ Layout and data are deliberately separated:
 | `assets/fonts/` | Self-hosted Archivo (variable woff2) — no external font dependency |
 | `.github/workflows/deploy.yml` | Publishes the site to GitHub Pages on every push to `main` |
 
-The visual style is **Modernist (dark)**: flat and architectural, set in Archivo, a single red
-accent (`#ec3013`) on a near-black ground, a visible modular grid, zero corner radius, and
-strong 2px rules. Design tokens live at the top of `styles.css` — restyling (or flipping back
-to a light ground) is a matter of editing those variables.
+The visual style is **Neo-brutalist**: a butter-cream ground (`#fff5db`), chunky Archivo set
+heavy, 3px black outlines with hard offset shadows, zero corner radius, and bright color-coded
+status badges (orange accent, yellow = in progress, mint = upcoming). Design tokens live at the
+top of `styles.css` — restyling is a matter of editing those variables.
 
 Because the page renders `competitions.json` client-side, refreshing the data is just a matter of
 overwriting that one file — the layout never has to be regenerated.
