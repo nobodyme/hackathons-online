@@ -42,7 +42,7 @@ overwriting that one file — the layout never has to be regenerated.
       "location": "Online",
       "start": "YYYY-MM-DD",
       "end": "YYYY-MM-DD",
-      "reg": "YYYY-MM-DD | null",
+      "reg": "YYYY-MM-DD",
       "prize": 10000,
       "prize_kind": "cash | mixed | non-cash | unknown",
       "prize_note": "e.g. split across tracks",
@@ -55,10 +55,14 @@ overwriting that one file — the layout never has to be regenerated.
 }
 ```
 
-`start` and `end` are **required** and must both be real dates. A competition whose start or end
-date cannot be established is left out of the file entirely rather than published with a null —
-an entry you cannot plan around is not worth a row. `reg` stays nullable: plenty of competitions
-genuinely have no separate registration deadline.
+`start`, `end` and `reg` are all **required** — no date field is ever null. A competition whose
+start or end date cannot be established is left out of the file entirely rather than published
+with a null: an entry you cannot plan around is not worth a row.
+
+Many competitions have no registration step separate from submission (ARC Prize, MLH Global Hack
+Week, most Devpost hackathons). For those, `reg` carries the submission deadline, which is the
+same as `end`. So `reg == end` means "no separate registration cutoff — you have until the
+deadline"; `reg < end` means there is a real earlier cutoff to watch.
 
 Rules the page enforces automatically:
 - **Retention:** entries whose `end` is more than 7 days in the past are hidden.
