@@ -4,7 +4,7 @@
   "use strict";
 
   var DAY = 86400000;
-  var state = { items: [], generated: null, status: "all" };
+  var state = { items: [], generated: null, status: "upcoming" };
 
   // --- date helpers (UTC-normalized to avoid timezone drift) --------------
   function today() {
@@ -273,8 +273,8 @@
       document.getElementById("f-cash").checked = false;
       document.getElementById("f-search").value = "";
       chips.forEach(function (x) { x.classList.remove("is-active"); });
-      document.querySelector('#status-chips .seg-opt[data-status="all"]').classList.add("is-active");
-      state.status = "all";
+      document.querySelector('#status-chips .seg-opt[data-status="upcoming"]').classList.add("is-active");
+      state.status = "upcoming";
       render();
     });
   }
