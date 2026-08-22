@@ -40,8 +40,8 @@ overwriting that one file — the layout never has to be regenerated.
       "type": "agent-challenge | coding-challenge | hackathon | benchmark",
       "format": "online | hybrid",
       "location": "Online",
-      "start": "YYYY-MM-DD | null",
-      "end": "YYYY-MM-DD | null",
+      "start": "YYYY-MM-DD",
+      "end": "YYYY-MM-DD",
       "reg": "YYYY-MM-DD | null",
       "prize": 10000,
       "prize_kind": "cash | mixed | non-cash | unknown",
@@ -55,10 +55,14 @@ overwriting that one file — the layout never has to be regenerated.
 }
 ```
 
+`start` and `end` are **required** and must both be real dates. A competition whose start or end
+date cannot be established is left out of the file entirely rather than published with a null —
+an entry you cannot plan around is not worth a row. `reg` stays nullable: plenty of competitions
+genuinely have no separate registration deadline.
+
 Rules the page enforces automatically:
 - **Retention:** entries whose `end` is more than 7 days in the past are hidden.
-- **Status** is derived from dates (`upcoming` / `in-progress` / `completed`); items with no dates
-  show "Dates to be announced".
+- **Status** is derived from dates (`upcoming` / `in-progress` / `completed`).
 - Prize pools are shown as advertised — non-cash pools (credits/hardware) are flagged.
 
 ## Automated refresh experiment
