@@ -4,7 +4,22 @@
   "use strict";
 
   var DAY = 86400000;
-  var state = { items: [], generated: null, status: "upcoming" };
+  var state = { items: [], generated: null, status: "upcoming", audience: "all" };
+
+  // --- audience (student-only) --------------------------------------------
+  // Explicit `audience` field wins; fall back to an eligibility keyword scan
+  // so the filter still works if a refresh omits the flag.
+  function isStudentOnly(it) {
+    if (it.audience === "students") return true;
+    if (it.audience === "all") return false;
+    var e = (it.eligibility || "").toLowerCase();
+    return /students?\s*only|student-only|\b(?:university|college)\s+students?\b|\byouth\b|k-12|high[-\s]school|pupils?/.test(e);
+  }
+  function audienceMatch(it) {
+    if (state.audience === "students") return isStudentOnly(it);   // only student-only
+    if (state.audience === "include") return true;                 // everyone
+    return !isStudentOnly(it);                                      // "all" → hide student-only
+  }
 
   // --- date helpers (UTC-normalized to avoid timezone drift) --------------
   function today() {
@@ -213,7 +228,8 @@
   // --- render -------------------------------------------------------------
   function render() {
     var t = today();
-    var items = retained(state.items, t);
+    var retainedItems = retained(state.items, t);
+    var items = retainedItems.filter(audienceMatch);   // audience-scoped base
     var shown = apply(items, t);
 
     var counts = { upcoming: 0, "in-progress": 0, completed: 0 };
@@ -228,8 +244,11 @@
     document.getElementById("s-done").textContent = counts.completed;
     document.getElementById("s-total").textContent = items.length;
 
+    var hiddenStudents = state.audience === "all"
+      ? retainedItems.filter(isStudentOnly).length : 0;
     document.getElementById("count").innerHTML =
-      "<b>" + shown.length + "</b> of " + items.length + " shown";
+      "<b>" + shown.length + "</b> of " + items.length + " shown" +
+      (hiddenStudents ? ' · <span class="muted-note">' + hiddenStudents + " student-only hidden</span>" : "");
 
     // hero: nearest not-yet-started competition
     var upcoming = items.filter(function (it) { return statusOf(it, t) === "upcoming" && parseDate(it.start) !== null; })
@@ -260,6 +279,16 @@
       });
     });
 
+    var audChips = document.querySelectorAll("#audience-chips .seg-opt");
+    audChips.forEach(function (c) {
+      c.addEventListener("click", function () {
+        audChips.forEach(function (x) { x.classList.remove("is-active"); });
+        c.classList.add("is-active");
+        state.audience = c.dataset.aud;
+        render();
+      });
+    });
+
     ["f-starts", "f-duration", "f-prize", "f-format", "f-sort", "f-cash"].forEach(function (id) {
       document.getElementById(id).addEventListener("change", render);
     });
@@ -275,6 +304,9 @@
       chips.forEach(function (x) { x.classList.remove("is-active"); });
       document.querySelector('#status-chips .seg-opt[data-status="upcoming"]').classList.add("is-active");
       state.status = "upcoming";
+      audChips.forEach(function (x) { x.classList.remove("is-active"); });
+      document.querySelector('#audience-chips .seg-opt[data-aud="all"]').classList.add("is-active");
+      state.audience = "all";
       render();
     });
   }

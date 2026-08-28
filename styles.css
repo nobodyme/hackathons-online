@@ -124,7 +124,10 @@ a { color: var(--ink); text-decoration: none; }
 .controls-head { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); }
 .section-label { margin: 0; font-weight: 900; text-transform: uppercase; letter-spacing: .1em; font-size: 14px; }
 
-/* Status chips */
+/* Status + audience chip groups */
+.segs { display: flex; flex-wrap: wrap; gap: var(--space-6) var(--space-8); }
+.segblock { display: flex; flex-direction: column; gap: 8px; }
+.seg-label { font-weight: 800; text-transform: uppercase; letter-spacing: .08em; font-size: 11px; }
 .seg { display: flex; flex-wrap: wrap; gap: var(--space-3); }
 .seg-opt {
   font-family: var(--font);
@@ -200,6 +203,7 @@ input[type="search"].input { flex: 1 1 280px; min-width: 200px; }
 .results-head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-4); flex-wrap: wrap; padding: var(--space-5) 0 var(--space-5); }
 .count { margin: 0; font-weight: 800; font-size: 15px; text-transform: uppercase; letter-spacing: .04em; }
 .count b { color: var(--accent); font-weight: 900; }
+.count .muted-note { color: var(--muted); font-weight: 700; }
 .refreshed { margin: 0; color: var(--muted); font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: .08em; }
 
 /* ---------- Cards ---------- */
