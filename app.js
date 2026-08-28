@@ -225,6 +225,24 @@
     return out;
   }
 
+  // Count filters that deviate from their defaults; drive the badge + Reset.
+  function updateFilterCount() {
+    var f = currentFilters();
+    var n = 0;
+    if (state.status !== "upcoming") n++;
+    if (state.audience !== "all") n++;
+    if (f.starts !== "any") n++;
+    if (f.duration !== "any") n++;
+    if (f.prize !== "any") n++;
+    if (f.format !== "any") n++;
+    if (f.cash) n++;
+    if (f.q) n++;
+    var badge = document.getElementById("filter-count");
+    var reset = document.getElementById("reset");
+    if (n > 0) { badge.textContent = n; badge.hidden = false; reset.hidden = false; }
+    else { badge.hidden = true; reset.hidden = true; }
+  }
+
   // --- render -------------------------------------------------------------
   function render() {
     var t = today();
@@ -237,6 +255,7 @@
 
     document.getElementById("grid").innerHTML = shown.map(function (it) { return card(it, t); }).join("");
     document.getElementById("empty").hidden = shown.length !== 0;
+    updateFilterCount();
 
     // stat row
     document.getElementById("s-upcoming").textContent = counts.upcoming;
@@ -268,6 +287,18 @@
   // --- wiring -------------------------------------------------------------
   function wire() {
     document.getElementById("controls").hidden = false;
+
+    // Collapsible filter body — collapsed by default on narrow screens.
+    var fbody = document.getElementById("filter-body");
+    var ftoggle = document.getElementById("filter-toggle");
+    var flabel = document.getElementById("filter-toggle-label");
+    function setFilters(open) {
+      fbody.hidden = !open;
+      ftoggle.setAttribute("aria-expanded", String(open));
+      flabel.textContent = open ? "Hide filters" : "Show filters";
+    }
+    setFilters(!window.matchMedia("(max-width: 700px)").matches);
+    ftoggle.addEventListener("click", function () { setFilters(fbody.hidden); });
 
     var chips = document.querySelectorAll("#status-chips .seg-opt");
     chips.forEach(function (c) {

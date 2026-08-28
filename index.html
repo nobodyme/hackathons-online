@@ -31,10 +31,13 @@
   <main class="wrap">
     <section class="controls" id="controls" aria-label="Filters" hidden>
       <div class="controls-head">
-        <p class="section-label">Filter</p>
-        <button class="btn press" id="reset" type="button">Reset<span class="btn-x">×</span></button>
+        <button class="btn press" id="filter-toggle" type="button" aria-expanded="true" aria-controls="filter-body">
+          <span class="btn-caret" aria-hidden="true">▾</span><span id="filter-toggle-label">Hide filters</span><span class="filter-count" id="filter-count" hidden></span>
+        </button>
+        <button class="btn press" id="reset" type="button" hidden>Reset<span class="btn-x">×</span></button>
       </div>
 
+      <div class="filter-body" id="filter-body">
       <div class="segs">
         <div class="segblock">
           <span class="seg-label">Status</span>
@@ -109,6 +112,7 @@
       <div class="controls-row">
         <input type="search" class="input" id="f-search" placeholder="Search name, platform, tag…" aria-label="Search" />
         <label class="check"><input type="checkbox" id="f-cash" /><span class="box"></span> Real cash only</label>
+      </div>
       </div>
     </section>
 
