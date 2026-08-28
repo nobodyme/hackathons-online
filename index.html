@@ -31,15 +31,31 @@
   <main class="wrap">
     <section class="controls" id="controls" aria-label="Filters" hidden>
       <div class="controls-head">
-        <p class="section-label">Filter</p>
-        <button class="btn press" id="reset" type="button">Reset<span class="btn-x">×</span></button>
+        <button class="btn press" id="filter-toggle" type="button" aria-expanded="true" aria-controls="filter-body">
+          <span class="btn-caret" aria-hidden="true">▾</span><span id="filter-toggle-label">Hide filters</span><span class="filter-count" id="filter-count" hidden></span>
+        </button>
+        <button class="btn press" id="reset" type="button" hidden>Reset<span class="btn-x">×</span></button>
       </div>
 
-      <div class="seg" id="status-chips" role="group" aria-label="Status filter">
-        <button class="seg-opt press" data-status="all" type="button">All</button>
-        <button class="seg-opt press is-active" data-status="upcoming" type="button">Upcoming</button>
-        <button class="seg-opt press" data-status="in-progress" type="button">In progress</button>
-        <button class="seg-opt press" data-status="completed" type="button">Completed</button>
+      <div class="filter-body" id="filter-body">
+      <div class="segs">
+        <div class="segblock">
+          <span class="seg-label">Status</span>
+          <div class="seg" id="status-chips" role="group" aria-label="Status filter">
+            <button class="seg-opt press" data-status="all" type="button">All</button>
+            <button class="seg-opt press is-active" data-status="upcoming" type="button">Upcoming</button>
+            <button class="seg-opt press" data-status="in-progress" type="button">In progress</button>
+            <button class="seg-opt press" data-status="completed" type="button">Completed</button>
+          </div>
+        </div>
+        <div class="segblock">
+          <span class="seg-label">Audience</span>
+          <div class="seg" id="audience-chips" role="group" aria-label="Audience filter">
+            <button class="seg-opt press is-active" data-aud="all" type="button">Open to all</button>
+            <button class="seg-opt press" data-aud="include" type="button">Include students</button>
+            <button class="seg-opt press" data-aud="students" type="button">Student-only</button>
+          </div>
+        </div>
       </div>
 
       <div class="fields">
@@ -96,6 +112,7 @@
       <div class="controls-row">
         <input type="search" class="input" id="f-search" placeholder="Search name, platform, tag…" aria-label="Search" />
         <label class="check"><input type="checkbox" id="f-cash" /><span class="box"></span> Real cash only</label>
+      </div>
       </div>
     </section>
 
