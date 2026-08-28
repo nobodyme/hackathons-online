@@ -7,13 +7,10 @@
   var state = { items: [], generated: null, status: "upcoming", audience: "all" };
 
   // --- audience (student-only) --------------------------------------------
-  // Explicit `audience` field wins; fall back to an eligibility keyword scan
-  // so the filter still works if a refresh omits the flag.
+  // Driven by the explicit `audience` field the refresh sets on every item;
+  // anything not marked "students" is treated as open to all.
   function isStudentOnly(it) {
-    if (it.audience === "students") return true;
-    if (it.audience === "all") return false;
-    var e = (it.eligibility || "").toLowerCase();
-    return /students?\s*only|student-only|\b(?:university|college)\s+students?\b|\byouth\b|k-12|high[-\s]school|pupils?/.test(e);
+    return it.audience === "students";
   }
   function audienceMatch(it) {
     if (state.audience === "students") return isStudentOnly(it);   // only student-only
