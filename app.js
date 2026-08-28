@@ -4,18 +4,20 @@
   "use strict";
 
   var DAY = 86400000;
-  var state = { items: [], generated: null, status: "upcoming", audience: "all" };
+  var state = { items: [], generated: null, status: "upcoming" };
 
-  // --- audience (student-only) --------------------------------------------
-  // Driven by the explicit `audience` field the refresh sets on every item;
-  // anything not marked "students" is treated as open to all.
+  // --- student-only competitions ------------------------------------------
+  // The refresh sets an explicit `audience` field ("all" | "students"); when
+  // it's missing, fall back to scanning the eligibility text so the filter
+  // still works. Student-only entries are hidden unless "I'm a student" is on.
   function isStudentOnly(it) {
-    return it.audience === "students";
+    if (it.audience === "students") return true;
+    if (it.audience === "all") return false;
+    var e = (it.eligibility || "").toLowerCase();
+    return /students?\s*only|student-only|\b(?:university|college)\s+students?\b|\byouth\b|k-12|high[-\s]school|pupils?/.test(e);
   }
-  function audienceMatch(it) {
-    if (state.audience === "students") return isStudentOnly(it);   // only student-only
-    if (state.audience === "include") return true;                 // everyone
-    return !isStudentOnly(it);                                      // "all" → hide student-only
+  function includeStudents() {
+    return document.getElementById("f-students").checked;
   }
 
   // --- date helpers (UTC-normalized to avoid timezone drift) --------------
@@ -227,7 +229,7 @@
     var f = currentFilters();
     var n = 0;
     if (state.status !== "upcoming") n++;
-    if (state.audience !== "all") n++;
+    if (includeStudents()) n++;
     if (f.starts !== "any") n++;
     if (f.duration !== "any") n++;
     if (f.prize !== "any") n++;
@@ -244,7 +246,8 @@
   function render() {
     var t = today();
     var retainedItems = retained(state.items, t);
-    var items = retainedItems.filter(audienceMatch);   // audience-scoped base
+    var showStudents = includeStudents();
+    var items = retainedItems.filter(function (it) { return showStudents || !isStudentOnly(it); });
     var shown = apply(items, t);
 
     var counts = { upcoming: 0, "in-progress": 0, completed: 0 };
@@ -260,8 +263,7 @@
     document.getElementById("s-done").textContent = counts.completed;
     document.getElementById("s-total").textContent = items.length;
 
-    var hiddenStudents = state.audience === "all"
-      ? retainedItems.filter(isStudentOnly).length : 0;
+    var hiddenStudents = showStudents ? 0 : retainedItems.filter(isStudentOnly).length;
     document.getElementById("count").innerHTML =
       "<b>" + shown.length + "</b> of " + items.length + " shown" +
       (hiddenStudents ? ' · <span class="muted-note">' + hiddenStudents + " student-only hidden</span>" : "");
@@ -307,17 +309,7 @@
       });
     });
 
-    var audChips = document.querySelectorAll("#audience-chips .seg-opt");
-    audChips.forEach(function (c) {
-      c.addEventListener("click", function () {
-        audChips.forEach(function (x) { x.classList.remove("is-active"); });
-        c.classList.add("is-active");
-        state.audience = c.dataset.aud;
-        render();
-      });
-    });
-
-    ["f-starts", "f-duration", "f-prize", "f-format", "f-sort", "f-cash"].forEach(function (id) {
+    ["f-starts", "f-duration", "f-prize", "f-format", "f-sort", "f-cash", "f-students"].forEach(function (id) {
       document.getElementById(id).addEventListener("change", render);
     });
     document.getElementById("f-search").addEventListener("input", render);
@@ -328,13 +320,11 @@
       });
       document.getElementById("f-sort").value = "nearest";
       document.getElementById("f-cash").checked = false;
+      document.getElementById("f-students").checked = false;
       document.getElementById("f-search").value = "";
       chips.forEach(function (x) { x.classList.remove("is-active"); });
       document.querySelector('#status-chips .seg-opt[data-status="upcoming"]').classList.add("is-active");
       state.status = "upcoming";
-      audChips.forEach(function (x) { x.classList.remove("is-active"); });
-      document.querySelector('#audience-chips .seg-opt[data-aud="all"]').classList.add("is-active");
-      state.audience = "all";
       render();
     });
   }

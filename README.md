@@ -68,10 +68,10 @@ deadline"; `reg < end` means there is a real earlier cutoff to watch.
 Rules the page enforces automatically:
 - **Retention:** entries whose `end` is more than 7 days in the past are hidden.
 - **Status** is derived from dates (`upcoming` / `in-progress` / `completed`).
-- **Audience:** `"students"` marks competitions restricted to students/youth (the refresh sets this
-  on every item). The page's **Audience** control defaults to *Open to all*, which hides these (with
-  an "N student-only hidden" note); one click reveals them via *Include students* or *Student-only*.
-  Any item not marked `"students"` is treated as open to all.
+- **Audience:** `"students"` marks competitions restricted to students/youth. These are **hidden by
+  default** (with an "N student-only hidden" note); ticking the **"I'm a student"** checkbox includes
+  them. Detection uses the explicit `audience` field when present, otherwise a scan of the
+  `eligibility` text — so it works whether or not the data is tagged.
 - Prize pools are shown as advertised — non-cash pools (credits/hardware) are flagged.
 
 ## Automated refresh experiment
