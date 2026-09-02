@@ -120,30 +120,6 @@
    ]
   },
   {
-   "id": "tiktok-techjam-2026",
-   "name": "TikTok TechJam 2026",
-   "platform": "Devpost (TikTok)",
-   "url": "https://tiktoktechjam2026.devpost.com/",
-   "type": "coding-challenge",
-   "format": "online",
-   "location": "Online",
-   "start": "2026-08-29",
-   "end": "2026-09-01",
-   "reg": "2026-09-01",
-   "prize": 34500,
-   "prize_kind": "cash",
-   "prize_note": "$15k/$8k/$5k/2x$3k plus $500 People's Choice",
-   "summary": "72-hour student challenge across ML, cybersecurity and e-commerce tracks; submissions have closed.",
-   "conf": "confirmed",
-   "eligibility": "College students 18+; limited to a specific country list, check rules",
-   "audience": "students",
-   "tags": [
-    "tiktok",
-    "ml",
-    "72h"
-   ]
-  },
-  {
    "id": "alpaca-ai-trading-agents-hackathon",
    "name": "Alpaca AI Trading Agents Hackathon",
    "platform": "lablab.ai",
