@@ -227,7 +227,7 @@
    "prize_note": "$77,000: ten leaderboard prizes ($9K top) plus three efficiency prizes",
    "summary": "Detect knee abnormalities from multimodal medical imaging; 10 leaderboard prizes plus efficiency awards.",
    "conf": "confirmed",
-   "eligibility": "Kaggle account; full rules not publicly readable",
+   "eligibility": "Open to researchers worldwide, standard Kaggle sanctions exclusions; entry deadline Oct 15",
    "tags": [
     "medical-imaging",
     "vision"
@@ -298,7 +298,7 @@
    "prize_note": "No prize published on the event site",
    "summary": "NeurIPS-track agent competition on verifiable AI for quantitative finance; registration and development close October 12.",
    "conf": "confirmed",
-   "eligibility": "Open; registration required by Sep 28",
+   "eligibility": "Open to industry, academia and independents; teams of 1-3, registration closes Oct 12",
    "tags": [
     "neurips",
     "agents",
@@ -555,9 +555,9 @@
    "prize": null,
    "prize_kind": "cash",
    "prize_note": "Cash prizes for 1st/2nd/3rd; amounts not yet disclosed",
-   "summary": "NeurIPS 2026 competition on steering LLM behaviour; registration opens September 10.",
+   "summary": "NeurIPS 2026 competition on steering LLM behaviour away from dishonesty; submissions close Nov 21.",
    "conf": "confirmed",
-   "eligibility": "Teams up to 5; winners must attend the NeurIPS Paris workshop; some geographic prize limits",
+   "eligibility": "Students, researchers, industry and hobbyists worldwide, subject to sanctions law; teams up to 5",
    "tags": [
     "neurips",
     "llm",
