@@ -807,29 +807,6 @@
    ]
   },
   {
-   "id": "ibm-bob-angelhack-virtual-2026",
-   "name": "Building with IBM Bob: AngelHack x IBM Virtual Hackathon",
-   "platform": "IBM / AngelHack",
-   "url": "https://developer.ibm.com/events/building-with-ibm-bob-angelhack-x-ibm-virtual-hackathon",
-   "type": "coding-challenge",
-   "format": "online",
-   "location": "Online / worldwide",
-   "start": "2026-09-28",
-   "end": "2026-10-19",
-   "reg": null,
-   "prize": null,
-   "prize_kind": "unknown",
-   "prize_note": "No event-specific prize published; IBM says top teams across its events can win up to $5,000 plus TechXchange passes",
-   "summary": "Three-week virtual hackathon using IBM Bob to explain and fix an unfamiliar app, or modernise a legacy one.",
-   "conf": "unknown",
-   "eligibility": "Open to builders of every background, two tracks (student/early-career, experienced dev); end date inferred, not published",
-   "audience": "all",
-   "tags": [
-    "coding-agents",
-    "ibm"
-   ]
-  },
-  {
    "id": "stemergent-hacks-2026",
    "name": "STEMergent Hacks 2026",
    "platform": "Devpost",
