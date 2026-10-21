@@ -49,6 +49,54 @@
    ]
   },
   {
+   "id": "agent-injection-arena-2026",
+   "name": "The Agent Injection Arena",
+   "platform": "Kaggle",
+   "url": "https://www.kaggle.com/competitions/the-agent-injection-arena",
+   "type": "agent-challenge",
+   "format": "online",
+   "location": "Online",
+   "start": "2026-10-20",
+   "end": "2026-12-31",
+   "reg": "2026-12-31",
+   "prize": null,
+   "prize_kind": "non-cash",
+   "prize_note": "No prize field set; Kaggle community competition",
+   "summary": "Detect prompt-injection and deception in agentic operation traces.",
+   "conf": "confirmed",
+   "eligibility": "Open globally; Kaggle community competition",
+   "audience": "all",
+   "tags": [
+    "agents",
+    "prompt-injection",
+    "security"
+   ]
+  },
+  {
+   "id": "agent-injection-arena-hackathon-2026",
+   "name": "The Agent Injection Arena - Hackathon Edition",
+   "platform": "Kaggle",
+   "url": "https://www.kaggle.com/competitions/the-agent-injection-arena-hackathon-edition",
+   "type": "hackathon",
+   "format": "online",
+   "location": "Online",
+   "start": "2026-10-20",
+   "end": "2026-12-31",
+   "reg": "2026-12-31",
+   "prize": null,
+   "prize_kind": "non-cash",
+   "prize_note": "Kudos only; writeup and demo track",
+   "summary": "Build a system that catches live prompt injection against agents; writeup plus demo track.",
+   "conf": "confirmed",
+   "eligibility": "Open globally; Kaggle community competition",
+   "audience": "all",
+   "tags": [
+    "agents",
+    "security",
+    "hackathon"
+   ]
+  },
+  {
    "id": "open-agent-hackathon-2026",
    "name": "Open Agent Hackathon 2026",
    "platform": "GenAI Works",
@@ -69,6 +117,30 @@
    "tags": [
     "agents",
     "open"
+   ]
+  },
+  {
+   "id": "lie-injection-gauntlet-2026",
+   "name": "The Lie Injection Gauntlet",
+   "platform": "Kaggle",
+   "url": "https://www.kaggle.com/competitions/the-lie-injection-gauntlet",
+   "type": "agent-challenge",
+   "format": "online",
+   "location": "Online",
+   "start": "2026-10-19",
+   "end": "2026-12-19",
+   "reg": "2026-12-19",
+   "prize": null,
+   "prize_kind": "non-cash",
+   "prize_note": "No prize field set; Kaggle community competition",
+   "summary": "Deception cartography for agent interactions: reproduce deception-instrument readings.",
+   "conf": "confirmed",
+   "eligibility": "Open globally; Kaggle community competition",
+   "audience": "all",
+   "tags": [
+    "agents",
+    "deception",
+    "security"
    ]
   },
   {
@@ -235,6 +307,29 @@
    ]
   },
   {
+   "id": "42e-screenpipe-agent-memory-2026",
+   "name": "42Entrepreneurs - Build Agents That Remember",
+   "platform": "Kaggle",
+   "url": "https://www.kaggle.com/competitions/42e-screenpipe",
+   "type": "hackathon",
+   "format": "online",
+   "location": "Online",
+   "start": "2026-10-17",
+   "end": "2026-10-17",
+   "reg": "2026-10-17",
+   "prize": null,
+   "prize_kind": "non-cash",
+   "prize_note": "Kudos only; one-day hackathon, now closed",
+   "summary": "One-day hackathon on giving AI agents persistent memory via Screenpipe.",
+   "conf": "confirmed",
+   "eligibility": "Open globally; Kaggle community hackathon",
+   "audience": "all",
+   "tags": [
+    "agents",
+    "memory"
+   ]
+  },
+  {
    "id": "airwallex-agentic-banking-2026",
    "name": "Airwallex Agentic Banking Hackathon",
    "platform": "HackerEarth",
@@ -325,6 +420,52 @@
     "cryptography",
     "private-ai",
     "security"
+   ]
+  },
+  {
+   "id": "llm-safety-mandate-2026",
+   "name": "The LLM Safety Mandate",
+   "platform": "Kaggle",
+   "url": "https://www.kaggle.com/competitions/the-llm-safety-mandate",
+   "type": "benchmark",
+   "format": "online",
+   "location": "Online",
+   "start": "2026-10-16",
+   "end": "2026-11-07",
+   "reg": "2026-11-07",
+   "prize": null,
+   "prize_kind": "non-cash",
+   "prize_note": "No prize field set; Kaggle community competition",
+   "summary": "Predict the refusal rate of a company's flagship LLM from partly anonymized data.",
+   "conf": "confirmed",
+   "eligibility": "Open globally; Kaggle community competition",
+   "audience": "all",
+   "tags": [
+    "llm",
+    "safety"
+   ]
+  },
+  {
+   "id": "iaa-ai-assisted-hackathon-2026-part-1",
+   "name": "IAA AI Assisted Hackathon 2026 - Part 1",
+   "platform": "Kaggle",
+   "url": "https://www.kaggle.com/competitions/iaa-ai-assisted-hackathon-2026-part-1",
+   "type": "hackathon",
+   "format": "online",
+   "location": "Online",
+   "start": "2026-10-16",
+   "end": "2026-10-23",
+   "reg": "2026-10-23",
+   "prize": 500,
+   "prize_kind": "cash",
+   "prize_note": "$500 cash; hosted by the International Actuarial Association",
+   "summary": "Build a pricing model and pricing tool for a novel insurance market, AI-assisted.",
+   "conf": "confirmed",
+   "eligibility": "Open on Kaggle; no stated geographic restriction",
+   "audience": "all",
+   "tags": [
+    "actuarial",
+    "hackathon"
    ]
   },
   {
@@ -470,6 +611,29 @@
    ]
   },
   {
+   "id": "name-that-llm-2026",
+   "name": "Name That LLM",
+   "platform": "Kaggle",
+   "url": "https://www.kaggle.com/competitions/name-that-llm",
+   "type": "benchmark",
+   "format": "online",
+   "location": "Online",
+   "start": "2026-10-14",
+   "end": "2027-01-14",
+   "reg": "2027-01-06",
+   "prize": 50000,
+   "prize_kind": "cash",
+   "prize_note": "$50,000 cash across 10 prizes, hosted by Kaggle itself",
+   "summary": "Classify unlabeled text passages by which of 18 frontier LLMs generated them.",
+   "conf": "confirmed",
+   "eligibility": "Open globally; standard Kaggle rules, entry closes Jan 6",
+   "audience": "all",
+   "tags": [
+    "llm",
+    "classification"
+   ]
+  },
+  {
    "id": "hacker-house-goa-2026",
    "name": "Hacker House Goa 2026",
    "platform": "Devfolio",
@@ -502,7 +666,7 @@
    "location": "Online (Kaggle); workshop Paris",
    "start": "2026-10-13",
    "end": "2027-01-15",
-   "reg": null,
+   "reg": "2026-12-03",
    "prize": 40000,
    "prize_kind": "cash",
    "prize_note": "$25k Kaggle leaderboard + $15k paper awards; NeurIPS poster round due Nov 13",
@@ -513,6 +677,29 @@
    "tags": [
     "rl",
     "buildings"
+   ]
+  },
+  {
+   "id": "homingo-hack-days-2026",
+   "name": "Homingo Hack Days",
+   "platform": "Homingo",
+   "url": "https://hackathon.homingo.co.in",
+   "type": "agent-challenge",
+   "format": "online",
+   "location": "Online (India only)",
+   "start": "2026-10-13",
+   "end": "2026-12-06",
+   "reg": "2026-11-15",
+   "prize": 60,
+   "prize_kind": "unknown",
+   "prize_note": "Rs 5,000 (~$60) for the winner plus a recommendation certificate; register and submit on the organiser site, not Kaggle",
+   "summary": "Online AI engineering hackathon with Agents, Automation and LLM-app tracks; demo day Dec 19.",
+   "conf": "confirmed",
+   "eligibility": "INDIA ONLY - students and early-career developers based in India; guardian consent under 18",
+   "audience": "students",
+   "tags": [
+    "agents",
+    "llm-apps"
    ]
   },
   {
@@ -655,6 +842,29 @@
    ]
   },
   {
+   "id": "mad-chairs-tournament-2026",
+   "name": "IEEE SSCI 2027 MAD Chairs Tournament",
+   "platform": "Kaggle",
+   "url": "https://www.kaggle.com/competitions/mad-chairs-tournament-2026",
+   "type": "agent-challenge",
+   "format": "online",
+   "location": "Online",
+   "start": "2026-10-11",
+   "end": "2026-12-24",
+   "reg": "2026-12-24",
+   "prize": null,
+   "prize_kind": "non-cash",
+   "prize_note": "Reward type is non-monetary; recognition at IEEE SSCI 2027",
+   "summary": "Prepare agentic AI to win a three-versus-one resource-division game tournament.",
+   "conf": "confirmed",
+   "eligibility": "Open globally; Kaggle community competition",
+   "audience": "all",
+   "tags": [
+    "agents",
+    "game-theory"
+   ]
+  },
+  {
    "id": "african-slm-tool-calling-hackathon-2026",
    "name": "African Small Language Model Tool Calling Hackathon",
    "platform": "Codabench (AIMS AI Research Foundations)",
@@ -722,6 +932,29 @@
    "tags": [
     "mlh",
     "open-source"
+   ]
+  },
+  {
+   "id": "ilera-bench-safe-triage-2026",
+   "name": "Ilera-Bench: Safe Triage for Nigerian Health Workers",
+   "platform": "Kaggle",
+   "url": "https://www.kaggle.com/competitions/ilera-bench-safe-triage",
+   "type": "benchmark",
+   "format": "online",
+   "location": "Online",
+   "start": "2026-10-09",
+   "end": "2026-11-30",
+   "reg": "2026-11-30",
+   "prize": null,
+   "prize_kind": "non-cash",
+   "prize_note": "No prize field set; Kaggle community competition",
+   "summary": "Predict local treatment versus referral versus urgent referral in English, Hausa and Yoruba.",
+   "conf": "confirmed",
+   "eligibility": "Open globally - the task is Nigeria-focused but entry is not restricted",
+   "audience": "all",
+   "tags": [
+    "nlp",
+    "healthcare"
    ]
   },
   {
@@ -832,7 +1065,7 @@
    "prize_kind": "cash",
    "prize_note": "$6,000 cash; hosted by CoLearn Lab, max team 10",
    "summary": "Predict the root mathematical misconception from photos of handwritten K-12 maths working.",
-   "conf": "approximate",
+   "conf": "confirmed",
    "eligibility": "Standard Kaggle community rules; max team 10",
    "audience": "all",
    "tags": [
@@ -1045,6 +1278,30 @@
    "tags": [
     "llm",
     "benchmark"
+   ]
+  },
+  {
+   "id": "marl-1d-tactical-value-2026",
+   "name": "MARL-1D Tactical Value Function Challenge",
+   "platform": "Kaggle",
+   "url": "https://www.kaggle.com/competitions/marl-1d-arena-ai",
+   "type": "agent-challenge",
+   "format": "online",
+   "location": "Online",
+   "start": "2026-10-04",
+   "end": "2026-12-09",
+   "reg": "2026-12-09",
+   "prize": null,
+   "prize_kind": "non-cash",
+   "prize_note": "Reward type is knowledge; no cash",
+   "summary": "Create tactical agents for a 1D turn-based duel engine managing poise and energy.",
+   "conf": "confirmed",
+   "eligibility": "Open globally; Kaggle community competition",
+   "audience": "all",
+   "tags": [
+    "agents",
+    "marl",
+    "simulation"
    ]
   },
   {
@@ -1324,6 +1581,29 @@
    ]
   },
   {
+   "id": "privacy-first-agentic-ai-2026",
+   "name": "Privacy-First Agentic AI (6th World Championship in Data Science & AI)",
+   "platform": "Kaggle",
+   "url": "https://www.kaggle.com/competitions/privacy-first-agentic-ai",
+   "type": "hackathon",
+   "format": "online",
+   "location": "Online",
+   "start": "2026-09-28",
+   "end": "2027-03-31",
+   "reg": "2027-03-31",
+   "prize": null,
+   "prize_kind": "non-cash",
+   "prize_note": "Kudos only on Kaggle",
+   "summary": "Build privacy-first agentic AI with Yankee AI and Chroma DB.",
+   "conf": "confirmed",
+   "eligibility": "Open globally; Kaggle community hackathon",
+   "audience": "all",
+   "tags": [
+    "agents",
+    "privacy"
+   ]
+  },
+  {
    "id": "apart-ai-epistemics-sprint-2026",
    "name": "AI x Epistemics Research Sprint",
    "platform": "Apart Research",
@@ -1555,6 +1835,29 @@
    ]
   },
   {
+   "id": "3lc-low-light-detection-2026",
+   "name": "The 3LC Low-Light Detection Challenge",
+   "platform": "Kaggle",
+   "url": "https://www.kaggle.com/competitions/the-3lc-low-light-detection-challenge",
+   "type": "benchmark",
+   "format": "online",
+   "location": "Online",
+   "start": "2026-09-21",
+   "end": "2026-11-21",
+   "reg": "2026-11-21",
+   "prize": 2000,
+   "prize_kind": "cash",
+   "prize_note": "$2,000 cash",
+   "summary": "Object detection across 12 classes on thousands of low-light images with noisy labels.",
+   "conf": "confirmed",
+   "eligibility": "Open globally; Kaggle community competition",
+   "audience": "all",
+   "tags": [
+    "vision",
+    "detection"
+   ]
+  },
+  {
    "id": "agent-memory-challenge-cycle-2",
    "name": "Agent Memory Challenge Cycle 2",
    "platform": "Agent Memory Leaderboard",
@@ -1578,26 +1881,26 @@
    ]
   },
   {
-   "id": "homingo-hack-days-2026",
-   "name": "Homingo Hack Days",
-   "platform": "Homingo",
-   "url": "https://hackathon.homingo.co.in",
-   "type": "agent-challenge",
+   "id": "frontier-due-diligence-s1-2026",
+   "name": "Frontier Due Diligence Challenge - Season 1",
+   "platform": "Kaggle",
+   "url": "https://www.kaggle.com/competitions/frontier-due-diligence-challenge-season-1",
+   "type": "hackathon",
    "format": "online",
-   "location": "Online (India only)",
-   "start": "2026-11-21",
-   "end": "2026-12-19",
-   "reg": "2026-11-15",
-   "prize": 60,
-   "prize_kind": "unknown",
-   "prize_note": "Rs 5,000 winner prize (~$60) + recommendation certificates for top 3; cash vs credit not stated",
-   "summary": "Online AI engineering hackathon with Agents, Automation and LLM-app tracks; demo day Dec 19.",
+   "location": "Online",
+   "start": "2026-09-17",
+   "end": "2026-10-17",
+   "reg": "2026-10-17",
+   "prize": null,
+   "prize_kind": "non-cash",
+   "prize_note": "Kudos only; now closed",
+   "summary": "Build evidence-backed agentic AI for VC, PE and SaaS due diligence.",
    "conf": "confirmed",
-   "eligibility": "INDIA ONLY - students and early-career developers based in India; guardian consent under 18",
-   "audience": "students",
+   "eligibility": "Open globally; Kaggle community hackathon",
+   "audience": "all",
    "tags": [
     "agents",
-    "llm-apps"
+    "finance"
    ]
   },
   {
@@ -1632,14 +1935,14 @@
    "type": "agent-challenge",
    "format": "online",
    "location": "Online / worldwide (Kaggle)",
-   "start": "2026-09-14",
+   "start": "2026-09-15",
    "end": "2026-11-15",
    "reg": null,
    "prize": 3000,
    "prize_kind": "cash",
    "prize_note": "Eight named awards ($700 Agent Master Builder down to $200); needs Windows + Besiege (Steam keys gifted)",
    "summary": "Agents build machines and controllers in Besiege and fly closed-loop missions, scored Autopilot vs Copilot.",
-   "conf": "approximate",
+   "conf": "confirmed",
    "eligibility": "Open globally; max team 3 and no mergers; BuildArena staff and judges ineligible for cash",
    "audience": "all",
    "tags": [
@@ -1901,6 +2204,29 @@
    ]
   },
   {
+   "id": "climx-climate-emulation-2026",
+   "name": "ClimX: Extreme-aware Climate Model Emulation",
+   "platform": "Kaggle",
+   "url": "https://www.kaggle.com/competitions/climx-main-track",
+   "type": "benchmark",
+   "format": "online",
+   "location": "Online",
+   "start": "2026-08-31",
+   "end": "2026-12-15",
+   "reg": "2026-12-15",
+   "prize": 3700,
+   "prize_kind": "cash",
+   "prize_note": "$3,700 cash",
+   "summary": "Accelerate projection of heatwaves, droughts and compound events via climate emulation.",
+   "conf": "confirmed",
+   "eligibility": "Open globally; Kaggle community competition",
+   "audience": "all",
+   "tags": [
+    "climate",
+    "emulation"
+   ]
+  },
+  {
    "id": "semeval-2027-task1-reteco",
    "name": "SemEval-2027 Task 1: RETECO (Reasoning-Oriented Retrieval)",
    "platform": "SemEval 2027",
@@ -2016,26 +2342,49 @@
    ]
   },
   {
-   "id": "arc-white-box-estimation-2026",
-   "name": "ARC White-Box Estimation Challenge 2026 (Phase 2)",
-   "platform": "AIcrowd",
-   "url": "https://www.aicrowd.com/challenges/arc-white-box-estimation-challenge-2026",
+   "id": "poisoned-chalice-llm-eval-icse27",
+   "name": "The Poisoned Chalice of LLM Evaluation (ICSE'27)",
+   "platform": "Kaggle",
+   "url": "https://www.kaggle.com/competitions/poisoned-chalice-icse27",
    "type": "benchmark",
    "format": "online",
-   "location": "Online / worldwide",
-   "start": "2026-08-23",
-   "end": "2026-10-17",
-   "reg": null,
-   "prize": 150000,
-   "prize_kind": "cash",
-   "prize_note": "AIcrowd index shows \"$150,000+\" for Phase 2; the challenge page publishes no amounts. NOTE: Alignment Research Center, not ARC Prize",
-   "summary": "Build estimators that read NN weights and predict per-neuron post-ReLU activation means under a compute budget.",
+   "location": "Online",
+   "start": "2026-08-26",
+   "end": "2026-12-05",
+   "reg": "2026-12-05",
+   "prize": null,
+   "prize_kind": "non-cash",
+   "prize_note": "No prize field set; ICSE 2027-linked community competition",
+   "summary": "Benchmark on contamination and other pitfalls in LLM evaluation for software engineering.",
    "conf": "confirmed",
-   "eligibility": "Open; 10 submissions per team per day in Phase 2",
+   "eligibility": "Open globally; Kaggle community competition",
    "audience": "all",
    "tags": [
-    "interpretability",
-    "benchmark"
+    "llm-eval",
+    "swe"
+   ]
+  },
+  {
+   "id": "badger-scribe-2026",
+   "name": "Badger Scribe",
+   "platform": "Kaggle",
+   "url": "https://www.kaggle.com/competitions/badger-scribe",
+   "type": "benchmark",
+   "format": "online",
+   "location": "Online",
+   "start": "2026-08-21",
+   "end": "2026-12-03",
+   "reg": "2026-12-03",
+   "prize": null,
+   "prize_kind": "non-cash",
+   "prize_note": "No prize field set; community competition hosted by ML+X, same host as Badger Code",
+   "summary": "Transcribe 19th-century handwritten UW Libraries archives using open-weight models.",
+   "conf": "confirmed",
+   "eligibility": "Open globally; Kaggle community competition",
+   "audience": "all",
+   "tags": [
+    "ocr",
+    "open-weights"
    ]
   },
   {
@@ -2074,9 +2423,9 @@
    "reg": null,
    "prize": 14925,
    "prize_kind": "cash",
-   "prize_note": "Parent total across two sub-tracks ($5,925 operator perf + $9,000 inference throughput); one track per team",
+   "prize_note": "$14,925 = Track 1 $5,925 + Track 2 $9,000. Third-party listings quoting $40,000 or $22,200 are stale",
    "summary": "Optimise AI operator and inference performance across diverse AI chips on the FlagOS open stack.",
-   "conf": "approximate",
+   "conf": "confirmed",
    "eligibility": "No restriction on nationality, age or occupation; off-Kaggle registration at flagos.net required for awards",
    "audience": "all",
    "tags": [
@@ -2105,6 +2454,52 @@
    "tags": [
     "llm",
     "evaluation"
+   ]
+  },
+  {
+   "id": "flagos-open-computing-track-1",
+   "name": "FlagOS Open Computing Global Challenge - Track 1",
+   "platform": "Kaggle",
+   "url": "https://www.kaggle.com/competitions/flag-os-open-computing-global-challenge-track-1",
+   "type": "coding-challenge",
+   "format": "online",
+   "location": "Online",
+   "start": "2026-08-18",
+   "end": "2026-12-30",
+   "reg": "2026-12-30",
+   "prize": 5925,
+   "prize_kind": "cash",
+   "prize_note": "$5,925 cash; separately enterable from Track 2",
+   "summary": "Optimize SGLang framework operators for performance across multiple AI chip platforms.",
+   "conf": "confirmed",
+   "eligibility": "Open globally; Kaggle community hackathon",
+   "audience": "all",
+   "tags": [
+    "gpu-kernels",
+    "sglang"
+   ]
+  },
+  {
+   "id": "flagos-open-computing-track-2",
+   "name": "FlagOS Open Computing Global Challenge - Track 2",
+   "platform": "Kaggle",
+   "url": "https://www.kaggle.com/competitions/flag-os-open-computing-global-challenge-track-2",
+   "type": "coding-challenge",
+   "format": "online",
+   "location": "Online",
+   "start": "2026-08-18",
+   "end": "2026-12-30",
+   "reg": "2026-12-30",
+   "prize": 9000,
+   "prize_kind": "cash",
+   "prize_note": "$9,000 cash; separately enterable from Track 1",
+   "summary": "Optimize inference throughput for MiniCPM5-2B across AI chip platforms.",
+   "conf": "confirmed",
+   "eligibility": "Open globally; Kaggle community hackathon",
+   "audience": "all",
+   "tags": [
+    "inference",
+    "optimization"
    ]
   },
   {
@@ -2166,9 +2561,9 @@
    "reg": "2026-11-07",
    "prize": 3000,
    "prize_kind": "cash",
-   "prize_note": "$3,000 cash (Gold $1,500 / Silver $1,000 / Bronze $500) + Reliability Award; NO DATES published anywhere - timeline unverified. Dates unconfirmed - the benchmark page publishes no start or submission date",
+   "prize_note": "$3,000: Gold $1,500 / Silver $1,000 / Bronze $500 plus a Reliability Award. IEEE Big Data Cup 2026 Challenge 07",
    "summary": "IEEE Big Data cup challenge benchmarking healthcare AI agents; finalists re-verified by organisers.",
-   "conf": "unknown",
+   "conf": "confirmed",
    "eligibility": "Open entry; finalists must supply source code and a qualifying report",
    "audience": "all",
    "tags": [
@@ -2377,7 +2772,7 @@
    "prize_kind": "non-cash",
    "prize_note": "Explicitly a non-monetary educational challenge; no cash or material prizes, top teams present at a showcase",
    "summary": "Build the best open coding agent on a single GPU with no proprietary models, scored on Terminal-Bench 2.1.",
-   "conf": "approximate",
+   "conf": "confirmed",
    "eligibility": "Hosted by a UW-Madison community but rules impose no enrolment or nationality restriction; max team 6",
    "audience": "all",
    "tags": [
@@ -2616,6 +3011,29 @@
    ]
   },
   {
+   "id": "arc-white-box-estimation-2026",
+   "name": "ARC White-Box Estimation Challenge 2026 (Phase 2)",
+   "platform": "AIcrowd",
+   "url": "https://www.aicrowd.com/challenges/arc-white-box-estimation-challenge-2026",
+   "type": "benchmark",
+   "format": "online",
+   "location": "Online / worldwide",
+   "start": "2026-06-18",
+   "end": "2026-10-21",
+   "reg": "2026-10-21",
+   "prize": 150000,
+   "prize_kind": "cash",
+   "prize_note": "Listed as '$150,000+ prize money'; exact split only in the Official Rules. Phase 2 closes today, Oct 21 23:59 UTC",
+   "summary": "Build estimators that read NN weights and predict per-neuron post-ReLU activation means under a compute budget.",
+   "conf": "confirmed",
+   "eligibility": "Open; 10 submissions per team per day in Phase 2",
+   "audience": "all",
+   "tags": [
+    "interpretability",
+    "benchmark"
+   ]
+  },
+  {
    "id": "finreason-cup-2026",
    "name": "FinReason Cup 2026 (IEEE Big Data Cup Challenge 03)",
    "platform": "IEEE Big Data 2026",
@@ -2636,6 +3054,29 @@
    "tags": [
     "finance",
     "llm"
+   ]
+  },
+  {
+   "id": "umud-ultrasound-muscle-2026",
+   "name": "UMUD Challenge: Muscle Architecture in Ultrasound Data",
+   "platform": "Kaggle",
+   "url": "https://www.kaggle.com/competitions/umud-challenge-muscle-architecture-in-ultrasound-data",
+   "type": "benchmark",
+   "format": "online",
+   "location": "Online",
+   "start": "2026-03-31",
+   "end": "2026-11-14",
+   "reg": "2026-11-14",
+   "prize": 3000,
+   "prize_kind": "cash",
+   "prize_note": "$3,000 cash",
+   "summary": "Retrieve muscle thickness, pennation angle and fascicle length from ultrasound images.",
+   "conf": "confirmed",
+   "eligibility": "Open globally; Kaggle community competition",
+   "audience": "all",
+   "tags": [
+    "medical-imaging",
+    "vision"
    ]
   },
   {
